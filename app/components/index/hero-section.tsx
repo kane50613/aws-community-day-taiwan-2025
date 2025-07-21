@@ -9,43 +9,41 @@ const actions = ["Connect", "Build with", "Learn with"];
 
 export function HeroSection() {
   return (
-    <div className="min-h-[calc(100dvh-4rem)] relative overflow-hidden">
-      <div className="relative mx-auto pt-[15vh] px-[max(1.5rem,min(6rem,8vw))] max-w-[120rem]">
-        <h1 className="flex flex-col font-semibold text-[max(3.5rem,min(12vw,16rem))] leading-tight">
-          <div className="relative flex">
-            <FloatingIcon
-              icon={
-                <Cloud className="w-[1em] aspect-square h-auto text-orange-400 drop-shadow-2xl" />
-              }
-              className="left-[0.75em] -top-[0.25em] absolute -rotate-12"
-              delay={0.6}
-            />
-            <TextWithInterval />
-          </div>
-
-          <div className="relative text-right">
-            <FloatingIcon
-              icon={
-                <UserRound className="w-[1em] aspect-square h-auto text-blue-400 drop-shadow-2xl" />
-              }
-              className="z-10 left-[4.5em] -top-[0.125em] absolute rotate-12"
-              delay={0.9}
-            />
-            <TextPart delay={0.3}>Community</TextPart>
-          </div>
-        </h1>
-        <div className="mt-[10vh] text-xl sm:text-2xl flex gap-12 justify-between flex-wrap">
-          <div>
-            <p>9月21日 (星期日) 上午9:30 - 下午5:30</p>
-            <p>台北國際會議中心</p>
-          </div>
-          <Button className="text-xl sm:w-48 py-8 rounded-full w-full" asChild>
-            <a href="https://awscmd.tw">
-              訂閱電子報
-              <Plus className="size-6" />
-            </a>
-          </Button>
+    <div className="relative mx-auto pt-[15vh] px-[max(1.5rem,min(6rem,8vw))] max-w-[120rem]">
+      <h1 className="flex flex-col font-medium text-[max(3.5rem,min(12vw,16rem))] leading-tight tracking-tight">
+        <div className="relative flex">
+          <FloatingIcon
+            icon={
+              <Cloud className="w-[1em] aspect-square h-auto text-orange-400 drop-shadow-2xl" />
+            }
+            className="left-[0.75em] -top-[0.25em] absolute -rotate-12"
+            delay={0.6}
+          />
+          <TextWithInterval />
         </div>
+
+        <div className="relative text-right">
+          <FloatingIcon
+            icon={
+              <UserRound className="w-[1em] aspect-square h-auto text-blue-400 drop-shadow-2xl" />
+            }
+            className="z-10 left-[4.5em] -top-[0.125em] absolute rotate-12"
+            delay={0.9}
+          />
+          <TextPart delay={0.3}>Community</TextPart>
+        </div>
+      </h1>
+      <div className="my-[5vh] text-xl sm:text-2xl flex gap-12 justify-between flex-wrap">
+        <div>
+          <p>9月21日 (星期日) 上午9:30 - 下午5:30</p>
+          <p>台北國際會議中心</p>
+        </div>
+        <Button className="text-xl sm:w-48 py-8 rounded-full w-full" asChild>
+          <a href="https://awscmd.tw">
+            訂閱電子報
+            <Plus className="size-6" />
+          </a>
+        </Button>
       </div>
     </div>
   );
