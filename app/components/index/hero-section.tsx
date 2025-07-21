@@ -92,7 +92,7 @@ function TextWithInterval() {
 const textVariants: Variants = {
   initial: {
     opacity: 0,
-    fontWeight: 400,
+    fontWeight: 100,
     filter: "blur(8px)",
   },
   show: {
