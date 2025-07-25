@@ -1,4 +1,5 @@
-import logo from "../../public/logo.png";
+import logo from "../assets/logo.png";
+import { LanguageSwitcher } from "./language-switcher";
 import { Button } from "./ui/button";
 
 export function Header() {
@@ -12,7 +13,10 @@ export function Header() {
           height={390}
           className="h-10 w-auto"
         />
-        <Button disabled>報名準備中</Button>
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          <Button disabled>報名準備中</Button>
+        </div>
       </div>
     </div>
   );

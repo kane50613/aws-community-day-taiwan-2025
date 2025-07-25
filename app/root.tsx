@@ -1,3 +1,4 @@
+import { IntlProvider } from "react-intl";
 import {
   isRouteErrorResponse,
   Links,
@@ -5,16 +6,37 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteLoaderData,
 } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
 import { Header } from "./components/header";
 import { MotionLoader } from "./components/motion-loader";
+import { type Locale, messages } from "./lib/i18n";
+
+export function useLocale(): Locale {
+  return useRouteLoaderData<typeof loader>("root")?.locale ?? "zh-TW";
+}
+
+export function loader({ params }: Route.LoaderArgs) {
+  if (params.locale && params.locale in messages)
+    return {
+      messages: messages[params.locale as Locale],
+      locale: params.locale as Locale,
+    };
+
+  return {
+    messages: messages["zh-TW"],
+    locale: "zh-TW" as Locale,
+  };
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const locale = useLocale();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,10 +54,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <MotionLoader>
-          <Header />
-          {children}
-        </MotionLoader>
+        {children}
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -43,8 +62,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App() {
-  return <Outlet />;
+export default function App({ loaderData }: Route.ComponentProps) {
+  return (
+    <IntlProvider locale={loaderData.locale} messages={loaderData.messages}>
+      <MotionLoader>
+        <Header />
+        <Outlet />
+      </MotionLoader>
+    </IntlProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
