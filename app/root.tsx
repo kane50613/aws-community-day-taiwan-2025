@@ -11,8 +11,10 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { Header } from "./components/header";
 import { MotionLoader } from "./components/motion-loader";
+import { queryClient } from "./lib/api/client";
 import { type Locale, messages } from "./lib/i18n";
 
 export function useLocale(): Locale {
@@ -65,10 +67,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App({ loaderData }: Route.ComponentProps) {
   return (
     <IntlProvider locale={loaderData.locale} messages={loaderData.messages}>
-      <MotionLoader>
-        <Header />
-        <Outlet />
-      </MotionLoader>
+      <QueryClientProvider client={queryClient}>
+        <MotionLoader>
+          <Header />
+          <Outlet />
+        </MotionLoader>
+      </QueryClientProvider>
     </IntlProvider>
   );
 }

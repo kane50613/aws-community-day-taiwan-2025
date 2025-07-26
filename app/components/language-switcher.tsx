@@ -33,7 +33,11 @@ export function LanguageSwitcher() {
             disabled={locale === currentLocale}
             asChild
           >
-            <Link hrefLang={locale} to={`/${locale}`} reloadDocument>
+            <Link
+              hrefLang={locale}
+              to={locale === "zh-TW" ? "/" : `/${locale}`}
+              reloadDocument
+            >
               {label}
             </Link>
           </DropdownMenuItem>

@@ -4,6 +4,7 @@ import * as m from "motion/react-m";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
+import { RegisterDialog } from "../dialog/register-dialog";
 import { Button } from "../ui/button";
 
 const actions = ["Connect", "Build with", "Learn with"];
@@ -43,14 +44,28 @@ export function HeroSection() {
             <FormattedMessage id="hero_section.location" />
           </p>
         </div>
-        <Button className="text-xl sm:w-48 py-8 rounded-full w-full" asChild>
-          <a href="https://awscmd.tw">
-            <FormattedMessage id="hero_section.cta" />
-            <Plus className="size-6" />
-          </a>
-        </Button>
+        <RegisterButton />
       </div>
     </div>
+  );
+}
+
+function RegisterButton() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <Button
+        onClick={() => setIsOpen(true)}
+        className="text-xl h-18 sm:w-48 rounded-full w-full flex flex-col gap-0"
+      >
+        <FormattedMessage id="hero_section.cta" />
+        <p className="text-xs text-primary-foreground/70 whitespace-pre-wrap">
+          <FormattedMessage id="hero_section.cta_subtitle" />
+        </p>
+      </Button>
+      <RegisterDialog isOpen={isOpen} onOpenChange={setIsOpen} />
+    </>
   );
 }
 
