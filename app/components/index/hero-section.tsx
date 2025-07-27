@@ -1,9 +1,10 @@
-import { Cloud, Plus, UserRound } from "lucide-react";
+import { Cloud, UserRound } from "lucide-react";
 import { AnimatePresence, type Variants } from "motion/react";
 import * as m from "motion/react-m";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
+import { useSearchParams } from "react-router";
 import { RegisterDialog } from "../dialog/register-dialog";
 import { Button } from "../ui/button";
 
@@ -52,6 +53,13 @@ export function HeroSection() {
 
 function RegisterButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("show_register_dialog") === "true") {
+      setIsOpen(true);
+    }
+  }, [searchParams]);
 
   return (
     <>

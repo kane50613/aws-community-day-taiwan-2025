@@ -5,6 +5,7 @@ export const messages = {
     "hero_section.cta": "立即報名",
     "hero_section.cta_subtitle": "或查看報到 QR Code",
     "register_dialog.title": "報名 AWS Community Day Taiwan 2025",
+    "register_dialog.loading": "載入中...",
     "login_dialog_content.title": "首先，使用您的社交帳號登入",
     "login_dialog_content.description":
       "報名資訊將會記錄在您的帳號中，您可以隨時登入查看或修改",
@@ -13,6 +14,7 @@ export const messages = {
     "register_dialog_content.email_description": "電子信箱由社交帳號自動填入",
     "register_dialog_content.name": "全名",
     "register_dialog_content.phone": "電話號碼",
+    "register_dialog_content.source": "您是從哪裡得知本次活動？",
     "register_dialog_content.submit": "送出",
     "qrcode_dialog_content._title": "報到 QR Code",
     "qrcode_dialog_content._description":
@@ -24,6 +26,7 @@ export const messages = {
     "hero_section.cta": "Register Now",
     "hero_section.cta_subtitle": "or view your check-in QR Code",
     "register_dialog.title": "Register for AWS Community Day Taiwan 2025",
+    "register_dialog.loading": "Loading...",
     "login_dialog_content.title": "First, log in with your social account",
     "login_dialog_content.description":
       "Registration information will be recorded in your account. You can log in anytime to view or modify it.",
@@ -33,6 +36,7 @@ export const messages = {
       "Email is automatically filled in from your social account",
     "register_dialog_content.name": "Full Name",
     "register_dialog_content.phone": "Phone Number",
+    "register_dialog_content.source": "How did you hear about this event?",
     "register_dialog_content.submit": "Submit",
     "qrcode_dialog_content._title": "Check-in QR Code",
     "qrcode_dialog_content._description":
@@ -44,6 +48,7 @@ export const messages = {
     "hero_section.cta": "今すぐ登録",
     "hero_section.cta_subtitle": "またはチェックインQRコードを確認",
     "register_dialog.title": "AWS Community Day Taiwan 2025に登録",
+    "register_dialog.loading": "読み込み中...",
     "login_dialog_content.title":
       "まず、ソーシャルアカウントでログインしてください",
     "login_dialog_content.description":
@@ -54,6 +59,7 @@ export const messages = {
       "メールアドレスはソーシャルアカウントから自動入力されます",
     "register_dialog_content.name": "氏名",
     "register_dialog_content.phone": "電話番号",
+    "register_dialog_content.source": "どこでこのイベントを知りましたか？",
     "register_dialog_content.submit": "送信",
     "qrcode_dialog_content._title": "チェックインQRコード",
     "qrcode_dialog_content._description":

@@ -84,10 +84,12 @@ function FormItem({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function FormLabel({
-  className,
-  ...props
-}: React.ComponentProps<typeof LabelPrimitive.Root>) {
+interface FormLabelProps
+  extends React.ComponentProps<typeof LabelPrimitive.Root> {
+  asterisk?: boolean;
+}
+
+function FormLabel({ className, asterisk, ...props }: FormLabelProps) {
   const { error, formItemId } = useFormField();
 
   return (
@@ -97,7 +99,10 @@ function FormLabel({
       className={cn("data-[error=true]:text-destructive", className)}
       htmlFor={formItemId}
       {...props}
-    />
+    >
+      {props.children}
+      {asterisk && <span className="text-destructive">*</span>}
+    </Label>
   );
 }
 
