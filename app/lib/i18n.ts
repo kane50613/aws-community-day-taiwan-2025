@@ -3,6 +3,7 @@ export const messages = {
     "hero_section.date": "9月21日 (星期日) 上午9:30 - 下午5:30",
     "hero_section.location": "台北國際會議中心 (TICC)",
     "hero_section.cta": "立即報名",
+    "hero_section.get_qrcode": "我的 QR Code",
     "hero_section.cta_subtitle": "或查看報到 QR Code",
     "register_dialog.title": "報名 AWS Community Day Taiwan 2025",
     "register_dialog.loading": "載入中...",
@@ -28,6 +29,7 @@ export const messages = {
     "hero_section.location": "Taipei International Convention Center (TICC)",
     "hero_section.cta": "Register Now",
     "hero_section.cta_subtitle": "or view your check-in QR Code",
+    "hero_section.get_qrcode": "My QR Code",
     "register_dialog.title": "Register for AWS Community Day Taiwan 2025",
     "register_dialog.loading": "Loading...",
     "login_dialog_content.title": "First, log in with your social account",
@@ -53,6 +55,7 @@ export const messages = {
     "hero_section.location": "台北国際会議センター (TICC)",
     "hero_section.cta": "今すぐ登録",
     "hero_section.cta_subtitle": "またはチェックインQRコードを確認",
+    "hero_section.get_qrcode": "私のQRコード",
     "register_dialog.title": "AWS Community Day Taiwan 2025に登録",
     "register_dialog.loading": "読み込み中...",
     "login_dialog_content.title":

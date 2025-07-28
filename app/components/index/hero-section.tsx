@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useSearchParams } from "react-router";
 import { tokenLocalStorageKey } from "~/lib/api/client";
+import { useEnrollment } from "~/lib/api/get-enrollment";
 import { openedModalAtom, tokenAtom } from "~/lib/store";
 import { RegisterDialog } from "../dialog/register-dialog";
 import { Button } from "../ui/button";
@@ -58,6 +59,7 @@ function RegisterButton() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [modal, setModal] = useAtom(openedModalAtom);
   const setToken = useSetAtom(tokenAtom);
+  const { data: enrollment } = useEnrollment();
 
   useEffect(() => {
     setToken(localStorage.getItem(tokenLocalStorageKey));
@@ -85,10 +87,16 @@ function RegisterButton() {
         onClick={() => setModal("register")}
         className="text-xl h-18 sm:w-48 rounded-full w-full flex flex-col gap-0"
       >
-        <FormattedMessage id="hero_section.cta" />
-        <p className="text-xs text-primary-foreground/70 whitespace-pre-wrap">
-          <FormattedMessage id="hero_section.cta_subtitle" />
-        </p>
+        {enrollment ? (
+          <FormattedMessage id="hero_section.get_qrcode" />
+        ) : (
+          <>
+            <FormattedMessage id="hero_section.cta" />
+            <p className="text-xs text-primary-foreground/70 whitespace-pre-wrap">
+              <FormattedMessage id="hero_section.cta_subtitle" />
+            </p>
+          </>
+        )}
       </Button>
       <RegisterDialog
         isOpen={modal === "register"}
@@ -132,7 +140,7 @@ function TextWithInterval() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((index) => (index + 1) % actions.length);
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
