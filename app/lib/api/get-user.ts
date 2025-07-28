@@ -30,9 +30,7 @@ interface User {
 export const userQueryKey = ["user"] as const;
 
 async function fetchUser() {
-  const response = await fetchWithSession(`${endpoint}/api/users/me`, {
-    credentials: "include",
-  });
+  const response = await fetchWithSession(`${endpoint}/api/users/me`);
 
   if (response.ok) {
     return response.json() as Promise<User>;
