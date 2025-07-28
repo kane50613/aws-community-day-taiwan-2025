@@ -60,6 +60,10 @@ function RegisterButton() {
   const setToken = useSetAtom(tokenAtom);
 
   useEffect(() => {
+    setToken(localStorage.getItem(tokenLocalStorageKey));
+  }, [setToken]);
+
+  useEffect(() => {
     if (searchParams.get("show_register_dialog") === "true") {
       setModal("register");
     }
