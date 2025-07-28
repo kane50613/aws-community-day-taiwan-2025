@@ -14,6 +14,7 @@ const locales = {
   "zh-TW": "繁體中文",
   en: "English",
   ja: "日本語",
+  kr: "한국어",
 } as const satisfies Record<Locale, string>;
 
 export function LanguageSwitcher() {

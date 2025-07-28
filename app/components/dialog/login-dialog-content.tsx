@@ -67,8 +67,8 @@ function Method({
       asChild
     >
       <a
-        href={authUrl}
-        className={cn((!authUrl || !disabled) && "text-muted-foreground")}
+        href={disabled ? undefined : authUrl}
+        className={cn((!authUrl || disabled) && "text-muted-foreground")}
       >
         <img src={iconUrl} alt={method} className="size-6" />
         {children}

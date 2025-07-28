@@ -1,5 +1,8 @@
 export const messages = {
   "zh-TW": {
+    "meta.title": "AWS 台灣社群年會 2025",
+    "meta.description":
+      "AWS 台灣社群年會是由 AWS User Group Taiwan 及社群夥伴共同舉辦的年度盛事，這是大家透過各式議程與活動學習、成長、交流的重要機會！",
     "hero_section.date": "9月21日 (星期日) 上午9:30 - 下午5:30",
     "hero_section.location": "台北國際會議中心 (TICC)",
     "hero_section.cta": "立即報名",
@@ -27,6 +30,9 @@ export const messages = {
       "請在活動當天出示此 QR Code 進行報到，您隨時可以回到這個頁面取得 QR Code",
   },
   en: {
+    "meta.title": "AWS Community Day Taiwan 2025",
+    "meta.description":
+      "AWS Community Day Taiwan is an annual event organized by AWS User Group Taiwan and our community partners. This is an important opportunity for everyone to learn, grow, and network through sessions and activities!",
     "hero_section.date": "September 21st (Sunday) 9:30 AM - 5:30 PM",
     "hero_section.location": "Taipei International Convention Center (TICC)",
     "hero_section.cta": "Register Now",
@@ -55,6 +61,9 @@ export const messages = {
       "Please show this QR Code for check-in on the day of the event. You can return to this page anytime to get the QR Code.",
   },
   ja: {
+    "meta.title": "AWS Community Day Taiwan 2025",
+    "meta.description":
+      "AWS Community Day Taiwanは、AWS User Group Taiwanとコミュニティパートナーが共同で開催する年次イベントです。これは、さまざまなセッションやアクティビティを通じて学び、成長し、交流するための重要な機会です！",
     "hero_section.date": "9月21日 (日) 午前9時30分 - 午後5時30分",
     "hero_section.location": "台北国際会議センター (TICC)",
     "hero_section.cta": "今すぐ登録",
@@ -82,6 +91,37 @@ export const messages = {
     "qrcode_dialog_content._title": "チェックインQRコード",
     "qrcode_dialog_content._description":
       "イベント当日にこのQRコードを提示してチェックインしてください。また、このページに戻ってQRコードを取得することもできます。",
+  },
+  kr: {
+    "meta.title": "AWS 커뮤니티 데이 대만 2025",
+    "meta.description":
+      "AWS 커뮤니티 데이 대만은 AWS User Group Taiwan과 커뮤니티 파트너가 공동으로 주최하는 연례 행사입니다. 다양한 세션과 활동을 통해 배우고 성장하며 교류할 수 있는 중요한 기회입니다!",
+    "hero_section.date": "9월 21일 (일) 오전 9시 30분 - 오후 5시 30분",
+    "hero_section.location": "타이베이 국제 회의 센터 (TICC)",
+    "hero_section.cta": "지금 등록",
+    "hero_section.cta_subtitle": "또는 체크인 QR 코드를 확인하세요",
+    "hero_section.get_qrcode": "내 QR 코드",
+    "register_dialog.title": "AWS 커뮤니티 데이 대만 2025 등록",
+    "register_dialog.loading": "로딩 중...",
+    "login_dialog_content.title": "먼저, 소셜 계정으로 로그인하세요",
+    "login_dialog_content.description":
+      "등록 정보는 계정에 기록됩니다. 언제든지 로그인하여 확인하거나 수정할 수 있습니다.",
+    "login_dialog_content.line_google_restriction":
+      "Line 브라우저는 Google 로그인을 지원하지 않습니다. 다른 브라우저에서 이 페이지를 여세요.",
+    "register_dialog_content.title": "정보 확인",
+    "register_dialog_content.email": "이메일",
+    "register_dialog_content.email_description":
+      "이메일은 소셜 계정에서 자동으로 입력됩니다",
+    "register_dialog_content.name": "이름",
+    "register_dialog_content.phone": "전화번호",
+    "register_dialog_content.company": "회사 / 학교 이름",
+    "register_dialog_content.source": "이 이벤트를 어떻게 알게 되었나요?",
+    "register_dialog_content.accept_tos_on_submit":
+      "제출함으로써 <privacy>개인정보 처리방침</privacy> 및 <terms>이용 약관</terms>에 동의합니다.",
+    "register_dialog_content.submit": "제출",
+    "qrcode_dialog_content._title": "체크인 QR 코드",
+    "qrcode_dialog_content._description":
+      "이벤트 당일에 이 QR 코드를 제시하여 체크인하세요. 언제든지 이 페이지로 돌아와 QR 코드를 얻을 수 있습니다.",
   },
 } as const;
 
