@@ -10,6 +10,10 @@ import { ButtonGroup } from "../ui/button-group";
 import { DialogDescription, DialogHeader, DialogTitle } from "../ui/dialog";
 
 export function LoginDialogContent() {
+  const isLine =
+    typeof window !== "undefined" &&
+    window.navigator.userAgent.includes("Line");
+
   return (
     <>
       <DialogHeader>
@@ -21,7 +25,7 @@ export function LoginDialogContent() {
         </DialogDescription>
       </DialogHeader>
       <ButtonGroup className="justify-stretch [&_a]:flex-1 flex-wrap">
-        <Method iconUrl={google} method="Google">
+        <Method iconUrl={google} method="Google" disabled={isLine}>
           Google
         </Method>
         <Method iconUrl={line} method="Line">
@@ -31,6 +35,11 @@ export function LoginDialogContent() {
           Amazon
         </Method>
       </ButtonGroup>
+      {isLine && (
+        <p className="text-sm text-muted-foreground mt-2">
+          <FormattedMessage id="login_dialog_content.line_google_restriction" />
+        </p>
+      )}
     </>
   );
 }
@@ -39,10 +48,12 @@ function Method({
   iconUrl,
   method,
   children,
+  disabled = false,
 }: {
   iconUrl: string;
   method: string;
   children: ReactNode;
+  disabled?: boolean;
 }) {
   const [authUrl, setAuthUrl] = useState<string>();
 
@@ -55,7 +66,10 @@ function Method({
       size="lg"
       asChild
     >
-      <a href={authUrl} className={cn(!authUrl && "text-muted-foreground")}>
+      <a
+        href={authUrl}
+        className={cn((!authUrl || !disabled) && "text-muted-foreground")}
+      >
         <img src={iconUrl} alt={method} className="size-6" />
         {children}
       </a>

@@ -10,6 +10,8 @@ export const messages = {
     "login_dialog_content.title": "首先，使用您的社交帳號登入",
     "login_dialog_content.description":
       "報名資訊將會記錄在您的帳號中，您可以隨時登入查看或修改",
+    "login_dialog_content.line_google_restriction":
+      "Line 瀏覽器無法使用 Google 登入，請使用其他瀏覽器開啟此頁面",
     "register_dialog_content.title": "再來，確認您的聯絡資訊",
     "register_dialog_content.email": "電子信箱",
     "register_dialog_content.email_description": "電子信箱由社交帳號自動填入",
@@ -35,6 +37,8 @@ export const messages = {
     "login_dialog_content.title": "First, log in with your social account",
     "login_dialog_content.description":
       "Registration information will be recorded in your account. You can log in anytime to view or modify it.",
+    "login_dialog_content.line_google_restriction":
+      "The Line browser does not support Google login. Please open this page in another browser.",
     "register_dialog_content.title": "Confirm Information",
     "register_dialog_content.email": "Email",
     "register_dialog_content.email_description":
@@ -62,6 +66,8 @@ export const messages = {
       "まず、ソーシャルアカウントでログインしてください",
     "login_dialog_content.description":
       "登録情報はアカウントに記録されます。いつでもログインして確認・変更できます。",
+    "login_dialog_content.line_google_restriction":
+      "LineブラウザではGoogleログインがサポートされていません。他のブラウザでこのページを開いてください。",
     "register_dialog_content.title": "情報確認",
     "register_dialog_content.email": "メールアドレス",
     "register_dialog_content.email_description":
