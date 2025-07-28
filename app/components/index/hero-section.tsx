@@ -1,4 +1,4 @@
-import { useAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import { Cloud, UserRound } from "lucide-react";
 import { AnimatePresence, type Variants } from "motion/react";
 import * as m from "motion/react-m";
@@ -6,8 +6,8 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useSearchParams } from "react-router";
-import { queryClient, tokenLocalStorageKey } from "~/lib/api/client";
-import { openedModal } from "~/lib/store";
+import { tokenLocalStorageKey } from "~/lib/api/client";
+import { openedModalAtom, tokenAtom } from "~/lib/store";
 import { RegisterDialog } from "../dialog/register-dialog";
 import { Button } from "../ui/button";
 
@@ -56,7 +56,8 @@ export function HeroSection() {
 
 function RegisterButton() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [modal, setModal] = useAtom(openedModal);
+  const [modal, setModal] = useAtom(openedModalAtom);
+  const setToken = useSetAtom(tokenAtom);
 
   useEffect(() => {
     if (searchParams.get("show_register_dialog") === "true") {
@@ -67,15 +68,12 @@ function RegisterButton() {
 
     if (token) {
       localStorage.setItem(tokenLocalStorageKey, token);
-      setTimeout(() => {
-        // Trigger a refetch of all queries
-        queryClient.invalidateQueries();
-      }, 500);
+      setToken(token);
     }
 
     // Clear the search params after reading them
     if (searchParams.size > 0) setSearchParams();
-  }, [searchParams, setSearchParams, setModal]);
+  }, [searchParams, setSearchParams, setModal, setToken]);
 
   return (
     <>

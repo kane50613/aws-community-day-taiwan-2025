@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { endpoint, fetchWithSession } from "./client";
+import { useAtomValue } from "jotai";
+import { tokenAtom } from "../store";
+import { endpoint } from "./client";
 
 export const sourceOptions = [
   "AWS Summit",
@@ -29,17 +31,24 @@ interface User {
 
 export const userQueryKey = ["user"] as const;
 
-async function fetchUser() {
-  const response = await fetchWithSession(`${endpoint}/api/users/me`);
-
-  if (response.ok) {
-    return response.json() as Promise<User>;
-  }
-}
-
 export function useUser() {
+  const token = useAtomValue(tokenAtom);
+
   return useQuery({
+    enabled: !!token,
     queryKey: userQueryKey,
-    queryFn: fetchUser,
+    async queryFn() {
+      const response = await fetch(`${endpoint}/api/users/me`, {
+        headers: {
+          Authorization: token ?? "",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch user data");
+      }
+
+      return response.json() as Promise<User>;
+    },
   });
 }

@@ -1,12 +1,12 @@
 import { useSetAtom } from "jotai";
 import { FormattedMessage } from "react-intl";
-import { openedModal } from "~/lib/store";
+import { openedModalAtom } from "~/lib/store";
 import logo from "../assets/logo.png";
 import { LanguageSwitcher } from "./language-switcher";
 import { Button } from "./ui/button";
 
 export function Header() {
-  const setModal = useSetAtom(openedModal);
+  const setModal = useSetAtom(openedModalAtom);
 
   return (
     <div className="px-8 mx-auto">

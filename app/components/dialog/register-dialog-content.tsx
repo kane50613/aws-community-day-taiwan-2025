@@ -1,18 +1,15 @@
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { useMutation } from "@tanstack/react-query";
+import { useAtomValue } from "jotai";
 import { Loader2 } from "lucide-react";
 import type { ReactNode } from "react";
 import { useForm } from "react-hook-form";
 import { FormattedMessage } from "react-intl";
 import { z } from "zod/mini";
-import {
-  endpoint,
-  fetchWithSession,
-  queryClient,
-  slug,
-} from "~/lib/api/client";
+import { endpoint, queryClient, slug } from "~/lib/api/client";
 import { enrollmentQueryKey } from "~/lib/api/get-enrollment";
 import { sourceOptions, useUser } from "~/lib/api/get-user";
+import { tokenAtom } from "~/lib/store";
 import { Button } from "../ui/button";
 import { DialogHeader, DialogTitle } from "../ui/dialog";
 import {
@@ -47,22 +44,29 @@ const schema = z.object({
 
 export function RegisterDialogContent() {
   const { data: user } = useUser();
+  const token = useAtomValue(tokenAtom);
 
-  const { mutate: createEnrollment, isPending: isCreating } = useMutation({
+  const {
+    mutate: createEnrollment,
+    isPending: isCreating,
+    error,
+  } = useMutation({
     async mutationFn(data: z.infer<typeof schema>) {
-      const response = await fetchWithSession(
-        `${endpoint}/events/${slug}.data`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...data,
-            acceptTos: true,
-          }),
+      if (!token) {
+        throw new Error("No token available");
+      }
+
+      const response = await fetch(`${endpoint}/events/${slug}.data`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
         },
-      );
+        body: JSON.stringify({
+          ...data,
+          acceptTos: true,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to fetch user data");
@@ -203,6 +207,11 @@ export function RegisterDialogContent() {
               }}
             />
           </p>
+          {error && (
+            <p className="text-sm text-destructive">
+              {error instanceof Error ? error.message : JSON.stringify(error)}
+            </p>
+          )}
           <Button type="submit" disabled={isCreating}>
             <FormattedMessage id="register_dialog_content.submit" />
             {isCreating && <Loader2 className="animate-spin" />}

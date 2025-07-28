@@ -9,14 +9,4 @@ export const endpoint =
 
 export const slug = "aws-community-day-2025";
 
-export function fetchWithSession(url: string, options?: RequestInit) {
-  return fetch(url, {
-    ...options,
-    headers: {
-      ...options?.headers,
-      Authorization: localStorage.getItem(tokenLocalStorageKey) ?? "",
-    },
-  });
-}
-
 export const tokenLocalStorageKey = "token";
