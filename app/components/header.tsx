@@ -2,7 +2,7 @@ import { useSetAtom } from "jotai";
 import { FormattedMessage } from "react-intl";
 import { useEnrollment } from "~/lib/api/get-enrollment";
 import { openedModalAtom } from "~/lib/store";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { LanguageSwitcher } from "./language-switcher";
 import { Button } from "./ui/button";
 
