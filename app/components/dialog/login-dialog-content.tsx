@@ -64,9 +64,7 @@ function Method({
 }
 
 function createAuthUrl(method: string): string {
-  const redirectTo = encodeURIComponent(
-    `${origin}?show_register_dialog=true&includeToken=true`,
-  );
+  const redirectTo = encodeURIComponent(`${origin}?show_register_dialog=true`);
 
-  return `${endpoint}/auth/${method}?redirectTo=${redirectTo}`;
+  return `${endpoint}/auth/${method}?redirectTo=${redirectTo}&includeToken=true`;
 }
