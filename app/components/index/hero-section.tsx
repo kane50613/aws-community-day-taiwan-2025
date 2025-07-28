@@ -49,7 +49,22 @@ export function HeroSection() {
             <FormattedMessage id="hero_section.location" />
           </p>
         </div>
-        <RegisterButton />
+        <div className="flex sm:flex-row flex-wrap w-full sm:w-fit gap-6">
+          <Button
+            asChild
+            variant="secondary"
+            className="text-xl h-18 sm:w-48 rounded-full w-full"
+          >
+            <a
+              href="https://awscmd.tw/2024/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FormattedMessage id="hero_section.checkout_last_year" />
+            </a>
+          </Button>
+          <RegisterButton />
+        </div>
       </div>
     </div>
   );
