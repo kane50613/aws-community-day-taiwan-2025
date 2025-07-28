@@ -9,15 +9,15 @@ import { RegisterDialogContent } from "./register-dialog-content";
 
 export function RegisterDialog({
   isOpen,
-  onOpenChange,
+  onClose,
 }: {
   isOpen: boolean;
-  onOpenChange: (open: boolean) => void;
+  onClose: () => void;
 }) {
   const step = useStep();
 
   return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
+    <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="flex flex-col gap-8 max-w-md w-full">
         <div className="pr-8 flex gap-4 items-center">
           <p className="whitespace-nowrap text-sm">{step} / 3</p>

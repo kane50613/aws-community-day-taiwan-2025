@@ -7,7 +7,7 @@ export const endpoint =
     ? "https://tw.events.awsug.net"
     : "http://localhost:3000";
 
-export const slug = "aws-community-day-taiwan-2025";
+export const slug = "aws-community-day-2025";
 
 export function fetchWithSession(url: string, options?: RequestInit) {
   return fetch(url, {

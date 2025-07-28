@@ -1,8 +1,13 @@
+import { useSetAtom } from "jotai";
+import { FormattedMessage } from "react-intl";
+import { openedModal } from "~/lib/store";
 import logo from "../assets/logo.png";
 import { LanguageSwitcher } from "./language-switcher";
 import { Button } from "./ui/button";
 
 export function Header() {
+  const setModal = useSetAtom(openedModal);
+
   return (
     <div className="px-8 mx-auto">
       <div className="border-b w-full flex justify-between items-center h-16">
@@ -15,7 +20,9 @@ export function Header() {
         />
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <Button disabled>報名準備中</Button>
+          <Button onClick={() => setModal("register")}>
+            <FormattedMessage id="hero_section.cta" />
+          </Button>
         </div>
       </div>
     </div>

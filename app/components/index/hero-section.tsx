@@ -1,3 +1,4 @@
+import { useAtom } from "jotai";
 import { Cloud, UserRound } from "lucide-react";
 import { AnimatePresence, type Variants } from "motion/react";
 import * as m from "motion/react-m";
@@ -6,6 +7,7 @@ import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useSearchParams } from "react-router";
 import { queryClient, tokenLocalStorageKey } from "~/lib/api/client";
+import { openedModal } from "~/lib/store";
 import { RegisterDialog } from "../dialog/register-dialog";
 import { Button } from "../ui/button";
 
@@ -53,30 +55,32 @@ export function HeroSection() {
 }
 
 function RegisterButton() {
-  const [isOpen, setIsOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [modal, setModal] = useAtom(openedModal);
 
   useEffect(() => {
     if (searchParams.get("show_register_dialog") === "true") {
-      setIsOpen(true);
+      setModal("register");
     }
 
     const token = searchParams.get(tokenLocalStorageKey);
 
     if (token) {
       localStorage.setItem(tokenLocalStorageKey, token);
-      // Trigger a refetch of all queries
-      queryClient.invalidateQueries();
+      setTimeout(() => {
+        // Trigger a refetch of all queries
+        queryClient.invalidateQueries();
+      }, 500);
     }
 
     // Clear the search params after reading them
     if (searchParams.size > 0) setSearchParams();
-  }, [searchParams, setSearchParams]);
+  }, [searchParams, setSearchParams, setModal]);
 
   return (
     <>
       <Button
-        onClick={() => setIsOpen(true)}
+        onClick={() => setModal("register")}
         className="text-xl h-18 sm:w-48 rounded-full w-full flex flex-col gap-0"
       >
         <FormattedMessage id="hero_section.cta" />
@@ -84,7 +88,10 @@ function RegisterButton() {
           <FormattedMessage id="hero_section.cta_subtitle" />
         </p>
       </Button>
-      <RegisterDialog isOpen={isOpen} onOpenChange={setIsOpen} />
+      <RegisterDialog
+        isOpen={modal === "register"}
+        onClose={() => setModal(null)}
+      />
     </>
   );
 }
