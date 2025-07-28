@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useSearchParams } from "react-router";
-import { queryClient } from "~/lib/api/client";
+import { queryClient, tokenLocalStorageKey } from "~/lib/api/client";
 import { RegisterDialog } from "../dialog/register-dialog";
 import { Button } from "../ui/button";
 
@@ -61,10 +61,10 @@ function RegisterButton() {
       setIsOpen(true);
     }
 
-    const session = searchParams.get("session");
+    const token = searchParams.get(tokenLocalStorageKey);
 
-    if (session) {
-      localStorage.setItem("session", session);
+    if (token) {
+      localStorage.setItem(tokenLocalStorageKey, token);
       // Trigger a refetch of all queries
       queryClient.invalidateQueries();
     }

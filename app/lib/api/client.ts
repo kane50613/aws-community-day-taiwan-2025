@@ -14,7 +14,9 @@ export function fetchWithSession(url: string, options?: RequestInit) {
     ...options,
     headers: {
       ...options?.headers,
-      Authorization: localStorage.getItem("session") ?? "",
+      Authorization: localStorage.getItem(tokenLocalStorageKey) ?? "",
     },
   });
 }
+
+export const tokenLocalStorageKey = "token";
