@@ -21,6 +21,22 @@ export function useLocale(): Locale {
   return useRouteLoaderData<typeof loader>("root")?.locale ?? "zh-TW";
 }
 
+export const meta: Route.MetaFunction = ({ location }) => [
+  {
+    property: "og:type",
+    content: "website",
+  },
+  {
+    property: "og:url",
+    content: `https://awscmd.tw${location.pathname}${location.search}`,
+  },
+  {
+    tagName: "link",
+    rel: "canonical",
+    href: `https://awscmd.tw${location.pathname}${location.search}`,
+  },
+];
+
 export function loader({ params }: Route.LoaderArgs) {
   if (params.locale && params.locale in messages)
     return {
