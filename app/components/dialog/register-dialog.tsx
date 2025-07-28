@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import { Dialog, DialogContent } from "~/components/ui/dialog";
 import { useEnrollment } from "~/lib/api/get-enrollment";
 import { useUser } from "~/lib/api/get-user";
@@ -41,6 +42,19 @@ export function useStep() {
 
 function DialogInner() {
   const step = useStep();
+
+  const { isLoading: isUserLoading } = useUser();
+  const { isLoading: isEnrollmentLoading } = useEnrollment();
+
+  if (isEnrollmentLoading || isUserLoading) {
+    return (
+      <div className="flex flex-col items-center gap-4">
+        <p>
+          <FormattedMessage id="register_dialog.loading" />
+        </p>
+      </div>
+    );
+  }
 
   switch (step) {
     case 1:
