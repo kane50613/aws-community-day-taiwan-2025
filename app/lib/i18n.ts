@@ -14,7 +14,10 @@ export const messages = {
     "register_dialog_content.email_description": "電子信箱由社交帳號自動填入",
     "register_dialog_content.name": "全名",
     "register_dialog_content.phone": "電話號碼",
+    "register_dialog_content.company": "公司 / 學校名稱",
     "register_dialog_content.source": "您是從哪裡得知本次活動？",
+    "register_dialog_content.accept_tos_on_submit":
+      "送出即表示您同意 <privacy>隱私政策</privacy> 及 <terms>服務條款</terms>",
     "register_dialog_content.submit": "送出",
     "qrcode_dialog_content._title": "報到 QR Code",
     "qrcode_dialog_content._description":
@@ -36,7 +39,10 @@ export const messages = {
       "Email is automatically filled in from your social account",
     "register_dialog_content.name": "Full Name",
     "register_dialog_content.phone": "Phone Number",
+    "register_dialog_content.company": "Company / School Name",
     "register_dialog_content.source": "How did you hear about this event?",
+    "register_dialog_content.accept_tos_on_submit":
+      "By submitting, you agree to our <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms>",
     "register_dialog_content.submit": "Submit",
     "qrcode_dialog_content._title": "Check-in QR Code",
     "qrcode_dialog_content._description":
@@ -59,7 +65,10 @@ export const messages = {
       "メールアドレスはソーシャルアカウントから自動入力されます",
     "register_dialog_content.name": "氏名",
     "register_dialog_content.phone": "電話番号",
+    "register_dialog_content.company": "会社 / 学校名",
     "register_dialog_content.source": "どこでこのイベントを知りましたか？",
+    "register_dialog_content.accept_tos_on_submit":
+      "送信即ち、<privacy>プライバシーポリシー</privacy>および<terms>利用規約</terms>に同意したことになります。",
     "register_dialog_content.submit": "送信",
     "qrcode_dialog_content._title": "チェックインQRコード",
     "qrcode_dialog_content._description":

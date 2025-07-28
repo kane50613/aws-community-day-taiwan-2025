@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { endpoint } from "./client";
+import { endpoint, fetchWithSession } from "./client";
 
 export const sourceOptions = [
   "AWS Summit",
@@ -30,7 +30,7 @@ interface User {
 export const userQueryKey = ["user"] as const;
 
 async function fetchUser() {
-  const response = await fetch(`${endpoint}/api/users/me`, {
+  const response = await fetchWithSession(`${endpoint}/api/users/me`, {
     credentials: "include",
   });
 

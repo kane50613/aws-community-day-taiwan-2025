@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { endpoint } from "./client";
+import { endpoint, fetchWithSession, slug } from "./client";
 
 interface Enrollment {
   code: string;
@@ -8,11 +8,8 @@ interface Enrollment {
 export const enrollmentQueryKey = ["enrollment"] as const;
 
 export async function fetchEnrollment() {
-  const response = await fetch(
-    `${endpoint}/events/ug-tpe-202506-online/enrolls/me`,
-    {
-      credentials: "include",
-    },
+  const response = await fetchWithSession(
+    `${endpoint}/events/${slug}/enrolls/me`,
   );
 
   if (response.ok) {

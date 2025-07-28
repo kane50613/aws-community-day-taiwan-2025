@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useSearchParams } from "react-router";
+import { queryClient } from "~/lib/api/client";
 import { RegisterDialog } from "../dialog/register-dialog";
 import { Button } from "../ui/button";
 
@@ -53,13 +54,24 @@ export function HeroSection() {
 
 function RegisterButton() {
   const [isOpen, setIsOpen] = useState(false);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     if (searchParams.get("show_register_dialog") === "true") {
       setIsOpen(true);
     }
-  }, [searchParams]);
+
+    const session = searchParams.get("session");
+
+    if (session) {
+      localStorage.setItem("session", session);
+      // Trigger a refetch of all queries
+      queryClient.invalidateQueries();
+    }
+
+    // Clear the search params after reading them
+    if (searchParams.size > 0) setSearchParams();
+  }, [searchParams, setSearchParams]);
 
   return (
     <>

@@ -1,8 +1,16 @@
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
+import { useMutation } from "@tanstack/react-query";
+import { Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { FormattedMessage } from "react-intl";
 import { z } from "zod/mini";
-import { useCreateEnrollment } from "~/lib/api/create-enrollment";
+import {
+  endpoint,
+  fetchWithSession,
+  queryClient,
+  slug,
+} from "~/lib/api/client";
+import { enrollmentQueryKey } from "~/lib/api/get-enrollment";
 import { sourceOptions, useUser } from "~/lib/api/get-user";
 import { Button } from "../ui/button";
 import { DialogHeader, DialogTitle } from "../ui/dialog";
@@ -23,22 +31,53 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import type { ReactNode } from "react";
 
 const schema = z.object({
   realName: z.string().check(z.minLength(1, "請輸入您的全名")),
-  phone: z.string().check(z.minLength(1, "請輸入您的電話號碼")),
+  phone: z
+    .string()
+    .check(
+      z.minLength(1, "請輸入您的電話號碼"),
+      z.regex(/^\+?[\d-]+$/, "請輸入有效的電話號碼"),
+    ),
+  company: z.string(),
   source: z.enum(sourceOptions, "請選擇您得知活動的管道"),
 });
 
 export function RegisterDialogContent() {
   const { data: user } = useUser();
-  const { mutate } = useCreateEnrollment();
+
+  const { mutate: createEnrollment, isPending: isCreating } = useMutation({
+    async mutationFn(data: z.infer<typeof schema>) {
+      const response = await fetchWithSession(`${endpoint}/events/${slug}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          acceptTos: true,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch user data");
+      }
+    },
+    onSuccess() {
+      queryClient.invalidateQueries({
+        queryKey: enrollmentQueryKey,
+      });
+    },
+  });
 
   const form = useForm<z.infer<typeof schema>>({
     resolver: standardSchemaResolver(schema),
     defaultValues: {
       realName: user?.db?.realName || "",
       phone: user?.db?.phone || "",
+      source: user?.db?.source,
     },
   });
 
@@ -52,7 +91,7 @@ export function RegisterDialogContent() {
       <Form {...form}>
         <form
           className="flex flex-col gap-4"
-          onSubmit={form.handleSubmit((data) => {})}
+          onSubmit={form.handleSubmit((data) => createEnrollment(data))}
         >
           <FormItem>
             <FormLabel asterisk>
@@ -98,6 +137,21 @@ export function RegisterDialogContent() {
           />
           <FormField
             control={form.control}
+            name="company"
+            render={() => (
+              <FormItem>
+                <FormLabel asterisk>
+                  <FormattedMessage id="register_dialog_content.company" />
+                </FormLabel>
+                <FormControl>
+                  <Input {...form.register("company")} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
             name="source"
             render={({ field }) => (
               <FormItem>
@@ -125,8 +179,34 @@ export function RegisterDialogContent() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="mt-4">
+          <p className="text-sm text-foreground/70">
+            <FormattedMessage
+              id="register_dialog_content.accept_tos_on_submit"
+              values={{
+                privacy: (children: ReactNode) => (
+                  <a
+                    href="https://aws.amazon.com/tw/privacy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {children}
+                  </a>
+                ),
+                terms: (children: ReactNode) => (
+                  <a
+                    href="https://aws.amazon.com/tw/service-terms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {children}
+                  </a>
+                ),
+              }}
+            />
+          </p>
+          <Button type="submit" className="mt-4" disabled={isCreating}>
             <FormattedMessage id="register_dialog_content.submit" />
+            {isCreating && <Loader2 className="animate-spin" />}
           </Button>
         </form>
       </Form>
