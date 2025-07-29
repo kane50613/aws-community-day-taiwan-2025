@@ -72,9 +72,17 @@ export function RegisterDialogContent() {
         throw new Error("Failed to fetch user data");
       }
     },
-    onSuccess() {
+    async onSuccess() {
       queryClient.invalidateQueries({
         queryKey: enrollmentQueryKey,
+      });
+
+      const confetti = await import("canvas-confetti");
+
+      confetti.default({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
       });
     },
   });
