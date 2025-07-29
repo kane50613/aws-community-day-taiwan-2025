@@ -49,7 +49,7 @@ export function HeroSection() {
             <FormattedMessage id="hero_section.location" />
           </p>
         </div>
-        <div className="flex sm:flex-row flex-wrap w-full sm:w-fit gap-6">
+        <div className="flex sm:flex-row flex-col-reverse flex-wrap w-full sm:w-fit gap-6">
           <Button
             asChild
             variant="secondary"
