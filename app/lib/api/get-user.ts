@@ -37,6 +37,7 @@ export function useUser() {
   return useQuery({
     enabled: !!token,
     queryKey: userQueryKey,
+    retry: false,
     async queryFn() {
       const response = await fetch(`${endpoint}/api/users/me`, {
         headers: {

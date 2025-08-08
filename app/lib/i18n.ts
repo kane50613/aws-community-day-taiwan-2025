@@ -29,6 +29,8 @@ export const messages = {
     "qrcode_dialog_content._title": "報到 QR Code",
     "qrcode_dialog_content._description":
       "請在活動當天出示此 QR Code 進行報到，您隨時可以回到這個頁面取得 QR Code",
+    "qrcode_dialog_content.add_to_google_calendar": "加入 Google 日曆",
+    "qrcode_dialog_content.download_ics": "下載 ICS 檔案",
   },
   en: {
     "meta.title": "AWS Community Day Taiwan 2025",
@@ -61,6 +63,8 @@ export const messages = {
     "qrcode_dialog_content._title": "Check-in QR Code",
     "qrcode_dialog_content._description":
       "Please show this QR Code for check-in on the day of the event. You can return to this page anytime to get the QR Code.",
+    "qrcode_dialog_content.add_to_google_calendar": "Add to Google Calendar",
+    "qrcode_dialog_content.download_ics": "Download ICS File",
   },
   ja: {
     "meta.title": "AWS Community Day Taiwan 2025",
@@ -94,6 +98,8 @@ export const messages = {
     "qrcode_dialog_content._title": "チェックインQRコード",
     "qrcode_dialog_content._description":
       "イベント当日にこのQRコードを提示してチェックインしてください。また、このページに戻ってQRコードを取得することもできます。",
+    "qrcode_dialog_content.add_to_google_calendar": "Googleカレンダーに追加",
+    "qrcode_dialog_content.download_ics": "ICSファイルをダウンロード",
   },
   kr: {
     "meta.title": "AWS 커뮤니티 데이 대만 2025",
@@ -126,6 +132,8 @@ export const messages = {
     "qrcode_dialog_content._title": "체크인 QR 코드",
     "qrcode_dialog_content._description":
       "이벤트 당일에 이 QR 코드를 제시하여 체크인하세요. 언제든지 이 페이지로 돌아와 QR 코드를 얻을 수 있습니다.",
+    "qrcode_dialog_content.add_to_google_calendar": "Google 캘린더에 추가",
+    "qrcode_dialog_content.download_ics": "ICS 파일 다운로드",
   },
 } as const;
 

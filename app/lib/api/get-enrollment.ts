@@ -15,6 +15,7 @@ export function useEnrollment() {
   return useQuery({
     enabled: !!token,
     queryKey: enrollmentQueryKey,
+    retry: false,
     async queryFn() {
       const response = await fetch(`${endpoint}/events/${slug}/enrolls/me`, {
         headers: {
