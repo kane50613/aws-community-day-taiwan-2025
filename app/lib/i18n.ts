@@ -31,6 +31,41 @@ export const messages = {
       "請在活動當天出示此 QR Code 進行報到，您隨時可以回到這個頁面取得 QR Code",
     "qrcode_dialog_content.add_to_google_calendar": "加入 Google 日曆",
     "qrcode_dialog_content.download_ics": "下載 ICS 檔案",
+    "session_section.title": "議程",
+    "session.session_tab.all": "全部",
+    "session.check_in": "報到",
+    "session.keynote_1": "主題演講一",
+    "session.keynote_2": "主題演講二",
+    "session.break": "休息時間",
+    "session.panel": "座談",
+    "session.noon_break": "午休 / 換場",
+    "session.track_a.title": "A 區",
+    "session.track_b.title": "B 區",
+    "session.workshop_1.title": "工作坊一",
+    "session.workshop_2.title": "工作坊二",
+    "session.track_a.13_00.title": "AWS 上的組織與合規實戰分享",
+    "session.track_a.13_50.title": "從 AWS Codebuild 到 ArgoCD 的 GitOps 之路",
+    "session.track_a.14_40.title":
+      "使用 ECS 與 Service Connect 設計高可用微服務架構",
+    "session.track_a.15_30.subtitle": "Kubernetes 異世界",
+    "session.track_a.15_30.title":
+      "用免費 AWS Academy Learner Lab 的遊戲化方式教 Kubernetes",
+    "session.track_b.13_00.subtitle": "Agentic AI 實務",
+    "session.track_b.13_00.title": "從 MCP 到開源 Strands Agents",
+    "session.track_b.13_50.subtitle": "在 AWS 上擴展 RAG 系統",
+    "session.track_b.13_50.title":
+      "使用 Bedrock、Lambda 與向量搜尋建置 AI 應用",
+    "session.track_b.14_40.subtitle": "連 HR 也能上手",
+    "session.track_b.14_40.title": "使用 Amazon Q 快速打造 AI 小幫手",
+    "session.track_b.15_30.title":
+      "用 AWS Serverless 架構為個人交易者建立交易帳本",
+    "session.ws_1.13_00.subtitle": "Netflix 不會告訴你的事",
+    "session.ws_1.13_00.title":
+      "他們如何用 AWS MediaLive 與 MediaPackage 進行直播",
+    "session.ws_1.14_40.title": "AWS Kiro",
+    "session.ws_2.13_00.subtitle": "RAG 實作指南",
+    "session.ws_2.13_00.title": "用 Amazon Bedrock 建構法務 AI 應用",
+    "session.ws_2.14_40.title": "（未定 工作坊）",
   },
   en: {
     "meta.title": "AWS Community Day Taiwan 2025",
@@ -65,6 +100,45 @@ export const messages = {
       "Please show this QR Code for check-in on the day of the event. You can return to this page anytime to get the QR Code.",
     "qrcode_dialog_content.add_to_google_calendar": "Add to Google Calendar",
     "qrcode_dialog_content.download_ics": "Download ICS File",
+    "session_section.title": "Sessions",
+    "session.session_tab.all": "All",
+    "session.check_in": "Check-in",
+    "session.keynote_1": "Keynote 1",
+    "session.keynote_2": "Keynote 2",
+    "session.break": "Break",
+    "session.panel": "Panel",
+    "session.noon_break": "Noon break / changeover",
+    "session.track_a.title": "Track A",
+    "session.track_b.title": "Track B",
+    "session.workshop_1.title": "Workshop 1",
+    "session.workshop_2.title": "Workshop 2",
+    "session.track_a.13_00.title":
+      "AWS Organizations and Compliance: Practical Sharing",
+    "session.track_a.13_50.title":
+      "My journey of Gitops with AWS Codebuild and ArgoCD",
+    "session.track_a.14_40.title":
+      "Designing Resilient Microservice Architectures with ECS and Service Connect",
+    "session.track_a.15_30.title":
+      "Gamifying Kubernetes Education in Free AWS Academy Learner Lab",
+    "session.track_a.15_30.subtitle": "Kubernetes Isekai",
+    "session.track_b.13_00.subtitle": "Agentic AI in Practice",
+    "session.track_b.13_00.title": "From MCP to Open Source Strands Agents",
+    "session.track_b.13_50.subtitle": "Scaling RAG Systems on AWS",
+    "session.track_b.13_50.title":
+      "Building AI Apps with Bedrock, Lambda & Vector Search",
+    "session.track_b.14_40.subtitle": "Make HR Friendly",
+    "session.track_b.14_40.title":
+      "Build an AI Assistant Quickly with Amazon Q",
+    "session.track_b.15_30.title":
+      "Create trading book for individual trader with AWS serverless architecture",
+    "session.ws_1.13_00.subtitle": "What Netflix Doesn't Tell You",
+    "session.ws_1.13_00.title":
+      "How They Stream Live with AWS MediaLive and MediaPackage",
+    "session.ws_1.14_40.title": "AWS Kiro",
+    "session.ws_2.13_00.subtitle": "A Hands-On Guide to RAG Applications",
+    "session.ws_2.13_00.title":
+      "Building Legal Intelligence with Amazon Bedrock",
+    "session.ws_2.14_40.title": "(TBD Workshop)",
   },
   ja: {
     "meta.title": "AWS Community Day Taiwan 2025",
@@ -100,6 +174,44 @@ export const messages = {
       "イベント当日にこのQRコードを提示してチェックインしてください。また、このページに戻ってQRコードを取得することもできます。",
     "qrcode_dialog_content.add_to_google_calendar": "Googleカレンダーに追加",
     "qrcode_dialog_content.download_ics": "ICSファイルをダウンロード",
+    "session_section.title": "セッション",
+    "session.session_tab.all": "すべて",
+    "session.check_in": "チェックイン",
+    "session.keynote_1": "基調講演 1",
+    "session.keynote_2": "基調講演 2",
+    "session.break": "休憩時間",
+    "session.panel": "パネル",
+    "session.noon_break": "昼休み / 会場移動",
+    "session.track_a.title": "A 区",
+    "session.track_b.title": "B 区",
+    "session.workshop_1.title": "ワークショップ 1",
+    "session.workshop_2.title": "ワークショップ 2",
+    "session.track_a.13_00.title":
+      "AWSにおける組織とコンプライアンス：実践共有",
+    "session.track_a.13_50.title":
+      "My journey of Gitops with AWS Codebuild and ArgoCD",
+    "session.track_a.14_40.title":
+      "Designing Resilient Microservice Architectures with ECS and Service Connect",
+    "session.track_a.15_30.title":
+      "Gamifying Kubernetes Education in Free AWS Academy Learner Lab",
+    "session.track_a.15_30.subtitle": "Kubernetes Isekai",
+    "session.track_b.13_00.subtitle": "Agentic AI in Practice",
+    "session.track_b.13_00.title": "From MCP to Open Source Strands Agents",
+    "session.track_b.13_50.subtitle": "Scaling RAG Systems on AWS",
+    "session.track_b.13_50.title":
+      "Building AI Apps with Bedrock, Lambda & Vector Search",
+    "session.track_b.14_40.subtitle": "HRでも簡単に！",
+    "session.track_b.14_40.title": "Amazon Qで素早くAIアシスタントを作る",
+    "session.track_b.15_30.title":
+      "Create trading book for individual trader with AWS serverless architecture",
+    "session.ws_1.13_00.subtitle": "What Netflix Doesn't Tell You",
+    "session.ws_1.13_00.title":
+      "How They Stream Live with AWS MediaLive and MediaPackage",
+    "session.ws_1.14_40.title": "AWS Kiro",
+    "session.ws_2.13_00.subtitle": "A Hands-On Guide to RAG Applications",
+    "session.ws_2.13_00.title":
+      "Building Legal Intelligence with Amazon Bedrock",
+    "session.ws_2.14_40.title": "（未定 ワークショップ）",
   },
   kr: {
     "meta.title": "AWS 커뮤니티 데이 대만 2025",
@@ -134,16 +246,55 @@ export const messages = {
       "이벤트 당일에 이 QR 코드를 제시하여 체크인하세요. 언제든지 이 페이지로 돌아와 QR 코드를 얻을 수 있습니다.",
     "qrcode_dialog_content.add_to_google_calendar": "Google 캘린더에 추가",
     "qrcode_dialog_content.download_ics": "ICS 파일 다운로드",
+    "session_section.title": "세션",
+    "session.session_tab.all": "모두",
+    "session.check_in": "체크인",
+    "session.keynote_1": "기조 연설 1",
+    "session.keynote_2": "기조 연설 2",
+    "session.break": "휴식 시간",
+    "session.panel": "패널",
+    "session.noon_break": "점심 휴식 / 이동",
+    "session.track_a.title": "A 구역",
+    "session.track_b.title": "B 구역",
+    "session.workshop_1.title": "워크숍 1",
+    "session.workshop_2.title": "워크숍 2",
+    "session.track_a.13_00.title": "AWS 상의 조직 및 규정 준수 실전 공유",
+    "session.track_a.13_50.title":
+      "My journey of Gitops with AWS Codebuild and ArgoCD",
+    "session.track_a.14_40.title":
+      "Designing Resilient Microservice Architectures with ECS and Service Connect",
+    "session.track_a.15_30.title":
+      "Gamifying Kubernetes Education in Free AWS Academy Learner Lab",
+    "session.track_a.15_30.subtitle": "Kubernetes 이세계",
+    "session.track_b.13_00.subtitle": "Agentic AI 실무",
+    "session.track_b.13_00.title": "From MCP to Open Source Strands Agents",
+    "session.track_b.13_50.subtitle": "AWS에서 RAG 시스템 확장",
+    "session.track_b.13_50.title":
+      "Building AI Apps with Bedrock, Lambda & Vector Search",
+    "session.track_b.14_40.subtitle": "HR도 쉽게!",
+    "session.track_b.14_40.title": "Amazon Q로 빠르게 AI 도우미 만들기",
+    "session.track_b.15_30.title":
+      "Create trading book for individual trader with AWS serverless architecture",
+    "session.ws_1.13_00.subtitle": "넷플릭스가 알려주지 않는 것들",
+    "session.ws_1.13_00.title":
+      "How They Stream Live with AWS MediaLive and MediaPackage",
+    "session.ws_1.14_40.title": "AWS Kiro",
+    "session.ws_2.13_00.subtitle": "RAG 실전 가이드",
+    "session.ws_2.13_00.title":
+      "Building Legal Intelligence with Amazon Bedrock",
+    "session.ws_2.14_40.title": "(미정 워크숍)",
   },
 } as const;
 
 export type Locale = keyof typeof messages;
 
+export type MessageId = keyof (typeof messages)["zh-TW"];
+
 declare global {
   // biome-ignore lint/style/noNamespace: Namespace is used to extend the FormatJSIntl interface
   namespace FormatjsIntl {
     interface Message {
-      ids: keyof (typeof messages)["zh-TW"];
+      ids: MessageId;
     }
   }
 }

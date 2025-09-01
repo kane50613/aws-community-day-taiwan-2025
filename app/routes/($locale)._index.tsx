@@ -1,5 +1,6 @@
 import { useIntl } from "react-intl";
 import { HeroSection } from "~/components/index/hero-section";
+import { SessionsSection } from "~/components/index/sessions-section";
 
 export default function Index() {
   const intl = useIntl();
@@ -12,6 +13,7 @@ export default function Index() {
         content={intl.formatMessage({ id: "meta.description" })}
       />
       <HeroSection />
+      <SessionsSection />
     </>
   );
 }

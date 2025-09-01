@@ -1,17 +1,17 @@
+import { Download } from "lucide-react";
 import { FormattedMessage } from "react-intl";
 import QRCode from "react-qr-code";
+import googleCalendar from "~/assets/google-calendar.svg";
 import { useEnrollment } from "~/lib/api/get-enrollment";
-import { DialogDescription, DialogHeader, DialogTitle } from "../ui/dialog";
-import { Button } from "../ui/button";
-import { Download } from "lucide-react";
 import {
   awsCommunityDayEvent,
+  downloadICSFile,
   generateGoogleCalendarUrl,
   generateICSContent,
-  downloadICSFile,
 } from "~/lib/calendar";
+import { Button } from "../ui/button";
+import { DialogDescription, DialogHeader, DialogTitle } from "../ui/dialog";
 import { Separator } from "../ui/separator";
-import googleCalendar from "~/assets/google-calendar.svg";
 
 export function QRCodeDialogContent() {
   const { data: enrollment } = useEnrollment();

@@ -17,7 +17,8 @@ export const awsCommunityDayEvent: CalendarEvent = {
   endTime: "173000",
   timezone: "Asia/Taipei",
   location: "Taipei International Convention Center (TICC)",
-  description: "Join us for AWS Community Day Taiwan 2025 - a full day of AWS insights, networking, and community building.",
+  description:
+    "Join us for AWS Community Day Taiwan 2025 - a full day of AWS insights, networking, and community building.",
 };
 
 export function generateGoogleCalendarUrl(event: CalendarEvent): string {
