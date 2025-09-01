@@ -9,7 +9,7 @@ export function BreakTimeCard({
   endTime: string;
 }) {
   return (
-    <div className="flex gap-4 justify-center items-center w-full my-8 whitespace-nowrap">
+    <div className="flex gap-4 justify-center items-center w-full my-8 whitespace-nowrap overflow-hidden">
       <Separator />
       <FormattedMessage id="session.break" />
       <span className="text-foreground/75 font-normal">

@@ -3,8 +3,8 @@ import { Fragment, useMemo } from "react";
 import { trackAtom } from "~/components/index/sessions-section";
 import { type Session, sessions } from "~/lib/config";
 import { Separator } from "../ui/separator";
-import { SessionCard } from "./session-card";
 import { BreakTimeCard } from "./break-time-card";
+import { SessionCard } from "./session-card";
 
 export function SessionsList() {
   const track = useAtomValue(trackAtom);
@@ -84,7 +84,7 @@ function SessionTimeList({
   }
 
   return (
-    <div key={startTime} className="space-y-8 py-4 px-8">
+    <div className="space-y-8 py-4 px-8">
       <p className="text-[1.5em] text-foreground/75">{startTime}</p>
       <div className="flex flex-col gap-y-8">
         {sessions.map((session, index) => (
