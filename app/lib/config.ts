@@ -72,9 +72,8 @@ export const sessions: {
     startAt: "11:10",
     endAt: "12:00",
   },
-  // 12:00 - Noon break / changeover
   {
-    title: "session.noon_break",
+    title: "session.break",
     tracks: ["trackA", "trackB"],
     startAt: "12:00",
     endAt: "13:00",
