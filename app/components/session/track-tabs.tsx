@@ -12,7 +12,10 @@ export function TrackTabs({ className }: { className?: string }) {
     <Tabs
       value={track}
       onValueChange={(value) => setTrack(value as TrackId)}
-      className={cn("sticky top-4 w-full overflow-x-auto px-5 z-50", className)}
+      className={cn(
+        "sticky top-4 w-full pb-4 overflow-x-auto px-5 z-50",
+        className,
+      )}
     >
       <TabsList>
         <TabsTrigger value="all">

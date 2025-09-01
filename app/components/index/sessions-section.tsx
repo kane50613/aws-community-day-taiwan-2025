@@ -12,7 +12,7 @@ export function SessionsSection() {
       <h2 className="text-4xl font-semibold px-8 my-8">
         <FormattedMessage id="session_section.title" />
       </h2>
-      <TrackTabs className="mb-12" />
+      <TrackTabs className="mb-8" />
       <SessionsList />
     </div>
   );
