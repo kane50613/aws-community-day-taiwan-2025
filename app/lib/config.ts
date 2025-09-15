@@ -29,13 +29,25 @@ export const tracks = [
   room: string;
 }[];
 
+export type Speaker = {
+  name: string;
+  title?: string;
+  link?: Link[];
+  image?: string;
+};
+
+export type Link = {
+  type: "linkedin" | "website";
+  url: string;
+};
+
 export const sessions: {
   subtitle?: MessageId;
   title: MessageId;
   tracks: TrackId | TrackId[];
   startAt: string;
   endAt: string;
-  speakers?: string[];
+  speakers?: Speaker[];
 }[] = [
   // 09:30 - Check-in
   {
@@ -49,7 +61,18 @@ export const sessions: {
     subtitle: "session.keynote_1.subtitle",
     title: "session.keynote_1.title",
     tracks: ["trackA", "trackB"],
-    speakers: ["Chia-liang Kao"],
+    speakers: [
+      {
+        name: "Chia-liang Kao",
+        title: "CEO @ Recce",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/clkao/",
+          },
+        ],
+      },
+    ],
     startAt: "10:00",
     endAt: "10:30",
   },
@@ -57,7 +80,18 @@ export const sessions: {
   {
     title: "session.keynote_2.title",
     tracks: ["trackA", "trackB"],
-    speakers: ["Kim"],
+    speakers: [
+      {
+        name: "Kim",
+        title: "Manager Solutions Architecture, AWS",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/kimkao/",
+          },
+        ],
+      },
+    ],
     startAt: "10:30",
     endAt: "11:00",
   },
@@ -73,7 +107,29 @@ export const sessions: {
     title: "session.track_a.11_10.title",
     subtitle: "session.track_a.11_10.subtitle",
     tracks: ["trackA", "trackB"],
-    speakers: ["Tse Chuan, Hsu", "Shiun Chiu"],
+    speakers: [
+      {
+        name: "Tse Chuan, Hsu",
+        title:
+          "Associate Professor. Soochow University Department of Computer Science and Information Management",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/tsechuanhsu/",
+          },
+        ],
+      },
+      {
+        name: "Shiun Chiu",
+        title: "AWS Community Builder",
+        link: [
+          {
+            type: "website",
+            url: "https://shiun.me/",
+          },
+        ],
+      },
+    ],
     startAt: "11:10",
     endAt: "12:00",
   },
@@ -89,7 +145,22 @@ export const sessions: {
     tracks: "trackA",
     startAt: "13:00",
     endAt: "13:40",
-    speakers: ["Gordon Wei"],
+    speakers: [
+      {
+        name: "Gordon Wei",
+        title: "iKala Cloud",
+        link: [
+          {
+            type: "website",
+            url: "https://www.kmp.tw/",
+          },
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/gordon-wei-a955906b/",
+          },
+        ],
+      },
+    ],
   },
   {
     subtitle: "session.track_b.13_00.subtitle",
@@ -97,7 +168,18 @@ export const sessions: {
     tracks: "trackB",
     startAt: "13:00",
     endAt: "13:40",
-    speakers: ["Haowen Huang"],
+    speakers: [
+      {
+        name: "Haowen Huang",
+        title: "Amazon",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/haowenhuang/",
+          },
+        ],
+      },
+    ],
   },
   {
     subtitle: "session.ws_1.13_00.subtitle",
@@ -105,7 +187,11 @@ export const sessions: {
     tracks: "ws1",
     startAt: "13:00",
     endAt: "13:40",
-    speakers: ["Luis"],
+    speakers: [
+      {
+        name: "劉國強",
+      },
+    ],
   },
   {
     title: "session.ws_2.13_00.title",
@@ -113,6 +199,18 @@ export const sessions: {
     tracks: "ws2",
     startAt: "13:00",
     endAt: "13:40",
+    speakers: [
+      {
+        name: "Mohamed Nizzad",
+        title: "Algorvation (Pvt) Ltd",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/mohamednizzad/",
+          },
+        ],
+      },
+    ],
   },
   // 13:40 - Break
   {
@@ -127,7 +225,17 @@ export const sessions: {
     tracks: "trackA",
     startAt: "13:50",
     endAt: "14:30",
-    speakers: ["Clay Lu"],
+    speakers: [
+      {
+        name: "Clay Lu",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/yu-hsuan-lu-a8b9527a/",
+          },
+        ],
+      },
+    ],
   },
   {
     subtitle: "session.track_b.13_50.subtitle",
@@ -135,7 +243,18 @@ export const sessions: {
     tracks: "trackB",
     startAt: "13:50",
     endAt: "14:30",
-    speakers: ["Himanshu Sangshetti"],
+    speakers: [
+      {
+        name: "Himanshu Sangshetti",
+        title: "ZS",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://in.linkedin.com/in/himanshu-sangshetti/",
+          },
+        ],
+      },
+    ],
   },
   // 14:30 - Break
   {
@@ -150,7 +269,18 @@ export const sessions: {
     tracks: "trackA",
     startAt: "14:40",
     endAt: "15:20",
-    speakers: ["Avinash Shashikant Dalvi"],
+    speakers: [
+      {
+        name: "Avinash Shashikant Dalvi",
+        title: "Nushift Technologies",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/avinash-dalvi-315b021a/",
+          },
+        ],
+      },
+    ],
   },
   {
     subtitle: "session.track_b.14_40.subtitle",
@@ -158,14 +288,36 @@ export const sessions: {
     tracks: "trackB",
     startAt: "14:40",
     endAt: "15:20",
-    speakers: ["鄭惠如 (RuRu)"],
+    speakers: [
+      {
+        name: "鄭惠如 (RuRu)",
+        title: "AI DataBrushing Technology Co., Ltd.",
+        link: [
+          {
+            type: "website",
+            url: "https://www.facebook.com/share/1EBtcBC4o7/",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "session.ws_1.14_40.title",
     tracks: "ws1",
     startAt: "14:40",
     endAt: "15:20",
-    speakers: ["Kiro"],
+    speakers: [
+      {
+        name: "Scott Liao",
+        title: "Amazon Web Services",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/kiro/",
+          },
+        ],
+      },
+    ],
   },
   // 15:20 - Break
   {
@@ -174,21 +326,23 @@ export const sessions: {
     startAt: "15:20",
     endAt: "15:30",
   },
-  // 15:30 - Track A: Kubernetes Isekai, Track B: Create trading book
-  {
-    subtitle: "session.track_a.15_30.subtitle",
-    title: "session.track_a.15_30.title",
-    tracks: "trackA",
-    startAt: "15:30",
-    endAt: "16:10",
-    speakers: ["Chun Yin", "Cyrus Wong"],
-  },
   {
     title: "session.track_b.15_30.title",
     tracks: "trackB",
     startAt: "15:30",
     endAt: "16:10",
-    speakers: ["Danny Chan"],
+    speakers: [
+      {
+        name: "Danny Chan",
+        title: "AWS Community Builder",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/danny-code/",
+          },
+        ],
+      },
+    ],
   },
 ];
 

@@ -10,9 +10,7 @@ import { ButtonGroup } from "../ui/button-group";
 import { DialogDescription, DialogHeader, DialogTitle } from "../ui/dialog";
 
 export function LoginDialogContent() {
-  const isLine =
-    typeof window !== "undefined" &&
-    window.navigator.userAgent.includes("Line");
+  const isLine = window?.navigator.userAgent.includes("Line");
 
   return (
     <>

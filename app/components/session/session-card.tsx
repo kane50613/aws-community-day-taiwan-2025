@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { FormattedMessage } from "react-intl";
 import { type Session, tracks } from "~/lib/config";
 import { cn } from "~/lib/utils";
+import { SessionSpeaker } from "./session-speaker";
 
 export function SessionCard({ session }: { session: Session }) {
   const trackIds =
@@ -29,9 +30,11 @@ export function SessionCard({ session }: { session: Session }) {
         </p>
       </div>
       {session.speakers && (
-        <p className="text-[0.875em] flex items-center font-normal sm:justify-end sm:text-end">
-          {session.speakers?.join(", ")}
-        </p>
+        <div className="flex flex-col gap-2">
+          {session.speakers.map((speaker) => (
+            <SessionSpeaker key={speaker.name} speaker={speaker} />
+          ))}
+        </div>
       )}
       <p className="text-foreground/75 text-[0.75em] sm:text-[0.875em] flex items-center sm:justify-end sm:text-end text-balance">
         {session.startAt} - {session.endAt}
