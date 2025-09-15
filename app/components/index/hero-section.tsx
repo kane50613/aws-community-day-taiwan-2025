@@ -55,12 +55,8 @@ export function HeroSection() {
             variant="secondary"
             className="text-xl h-18 sm:w-48 rounded-full w-full"
           >
-            <a
-              href="https://awscmd.tw/2024/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FormattedMessage id="hero_section.checkout_last_year" />
+            <a href="#agenda">
+              <FormattedMessage id="hero_section.goto_agenda" />
             </a>
           </Button>
           <RegisterButton />

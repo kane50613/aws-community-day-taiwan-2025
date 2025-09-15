@@ -8,7 +8,7 @@ export const messages = {
     "hero_section.cta": "立即報名",
     "hero_section.get_qrcode": "我的 QR Code",
     "hero_section.cta_subtitle": "或查看報到 QR Code",
-    "hero_section.checkout_last_year": "去年的議程",
+    "hero_section.goto_agenda": "帶我去議程表",
     "register_dialog.title": "報名 AWS Community Day Taiwan 2025",
     "register_dialog.loading": "載入中...",
     "login_dialog_content.title": "首先，使用您的社交帳號登入",
@@ -34,10 +34,12 @@ export const messages = {
     "session_section.title": "議程",
     "session.session_tab.all": "全部",
     "session.check_in": "報到",
-    "session.keynote_1": "主題演講一",
-    "session.keynote_2": "主題演講二",
+    "session.keynote_1.subtitle": "重塑未來",
+    "session.keynote_1.title": "一位創辦人的程式與社群之旅",
+    "session.keynote_2.title": "以 AIDLC 驅動應用系統現代化體驗升級",
     "session.break": "休息時間",
-    "session.panel": "座談",
+    "session.track_a.11_10.subtitle": "AI 時代下的人才革命",
+    "session.track_a.11_10.title": "挑戰、轉型與新契機",
     "session.track_a.title": "A 區",
     "session.track_b.title": "B 區",
     "session.workshop_1.title": "工作坊一",
@@ -61,10 +63,9 @@ export const messages = {
     "session.ws_1.13_00.subtitle": "Netflix 不會告訴你的事",
     "session.ws_1.13_00.title":
       "他們如何用 AWS MediaLive 與 MediaPackage 進行直播",
-    "session.ws_1.14_40.title": "AWS Kiro",
+    "session.ws_1.14_40.title": "用 Kiro 打造你的第一個應用",
     "session.ws_2.13_00.subtitle": "RAG 實作指南",
     "session.ws_2.13_00.title": "用 Amazon Bedrock 建構法務 AI 應用",
-    "session.ws_2.14_40.title": "（未定 工作坊）",
   },
   en: {
     "meta.title": "AWS Community Day Taiwan 2025",
@@ -75,7 +76,7 @@ export const messages = {
     "hero_section.cta": "Register Now",
     "hero_section.cta_subtitle": "or view your check-in QR Code",
     "hero_section.get_qrcode": "My QR Code",
-    "hero_section.checkout_last_year": "Last Year's Agenda",
+    "hero_section.goto_agenda": "Go to Agenda",
     "register_dialog.title": "Register for AWS Community Day Taiwan 2025",
     "register_dialog.loading": "Loading...",
     "login_dialog_content.title": "First, log in with your social account",
@@ -102,14 +103,18 @@ export const messages = {
     "session_section.title": "Sessions",
     "session.session_tab.all": "All",
     "session.check_in": "Check-in",
-    "session.keynote_1": "Keynote I",
-    "session.keynote_2": "Keynote II",
+    "session.keynote_1.subtitle": "Refactoring the Future",
+    "session.keynote_1.title": "A Founder’s Journey in Code and Community",
+    "session.keynote_2.title":
+      "Enhancing Application Modernization Experience with AIDLC",
     "session.break": "Break",
-    "session.panel": "Panel",
     "session.track_a.title": "Track A",
     "session.track_b.title": "Track B",
     "session.workshop_1.title": "Workshop 1",
     "session.workshop_2.title": "Workshop 2",
+    "session.track_a.11_10.subtitle": "The Talent Revolution in the AI Era",
+    "session.track_a.11_10.title":
+      "Challenges, Transformation, and New Opportunities",
     "session.track_a.13_00.title":
       "AWS Organizations and Compliance: Practical Sharing",
     "session.track_a.13_50.title":
@@ -132,11 +137,10 @@ export const messages = {
     "session.ws_1.13_00.subtitle": "What Netflix Doesn't Tell You",
     "session.ws_1.13_00.title":
       "How They Stream Live with AWS MediaLive and MediaPackage",
-    "session.ws_1.14_40.title": "AWS Kiro",
+    "session.ws_1.14_40.title": "Building your first application using Kiro",
     "session.ws_2.13_00.subtitle": "A Hands-On Guide to RAG Applications",
     "session.ws_2.13_00.title":
       "Building Legal Intelligence with Amazon Bedrock",
-    "session.ws_2.14_40.title": "(TBD Workshop)",
   },
   ja: {
     "meta.title": "AWS Community Day Taiwan 2025",
@@ -145,8 +149,8 @@ export const messages = {
     "hero_section.date": "9月21日 (日) 午前9時30分 - 午後5時30分",
     "hero_section.location": "台北国際会議センター (TICC)",
     "hero_section.cta": "今すぐ登録",
-    "hero_section.cta_subtitle": "またはチェックインQRコードを確認",
-    "hero_section.checkout_last_year": "昨年のアジェンダ",
+    "hero_section.cta_subtitle": "またはチェックインQRコードを確認できます",
+    "hero_section.goto_agenda": "アジェンダへ",
     "hero_section.get_qrcode": "私のQRコード",
     "register_dialog.title": "AWS Community Day Taiwan 2025に登録",
     "register_dialog.loading": "読み込み中...",
@@ -175,10 +179,14 @@ export const messages = {
     "session_section.title": "セッション",
     "session.session_tab.all": "すべて",
     "session.check_in": "チェックイン",
-    "session.keynote_1": "基調講演 1",
-    "session.keynote_2": "基調講演 2",
+    "session.keynote_1.subtitle": "Refactoring the Future",
+    "session.keynote_1.title": "A Founder's Journey in Code and Community",
+    "session.keynote_2.title":
+      "Enhancing Application Modernization Experience with AIDLC",
     "session.break": "休憩時間",
-    "session.panel": "パネル",
+    "session.track_a.11_10.subtitle": "The Talent Revolution in the AI Era",
+    "session.track_a.11_10.title":
+      "Challenges, Transformation, and New Opportunities",
     "session.track_a.title": "A 区",
     "session.track_b.title": "B 区",
     "session.workshop_1.title": "ワークショップ 1",
@@ -204,11 +212,10 @@ export const messages = {
     "session.ws_1.13_00.subtitle": "What Netflix Doesn't Tell You",
     "session.ws_1.13_00.title":
       "How They Stream Live with AWS MediaLive and MediaPackage",
-    "session.ws_1.14_40.title": "AWS Kiro",
+    "session.ws_1.14_40.title": "Building your first application using Kiro",
     "session.ws_2.13_00.subtitle": "A Hands-On Guide to RAG Applications",
     "session.ws_2.13_00.title":
       "Building Legal Intelligence with Amazon Bedrock",
-    "session.ws_2.14_40.title": "（未定 ワークショップ）",
   },
   kr: {
     "meta.title": "AWS 커뮤니티 데이 대만 2025",
@@ -218,7 +225,7 @@ export const messages = {
     "hero_section.location": "타이베이 국제 회의 센터 (TICC)",
     "hero_section.cta": "지금 등록",
     "hero_section.cta_subtitle": "또는 체크인 QR 코드를 확인하세요",
-    "hero_section.checkout_last_year": "작년 아젠다 보기",
+    "hero_section.goto_agenda": "아젠다로 이동",
     "hero_section.get_qrcode": "내 QR 코드",
     "register_dialog.title": "AWS 커뮤니티 데이 대만 2025 등록",
     "register_dialog.loading": "로딩 중...",
@@ -246,14 +253,18 @@ export const messages = {
     "session_section.title": "세션",
     "session.session_tab.all": "모두",
     "session.check_in": "체크인",
-    "session.keynote_1": "기조 연설 1",
-    "session.keynote_2": "기조 연설 2",
+    "session.keynote_1.subtitle": "Refactoring the Future",
+    "session.keynote_1.title": "A Founder's Journey in Code and Community",
+    "session.keynote_2.title":
+      "Enhancing Application Modernization Experience with AIDLC",
     "session.break": "휴식 시간",
-    "session.panel": "패널",
     "session.track_a.title": "A 구역",
     "session.track_b.title": "B 구역",
     "session.workshop_1.title": "워크숍 1",
     "session.workshop_2.title": "워크숍 2",
+    "session.track_a.11_10.subtitle": "The Talent Revolution in the AI Era",
+    "session.track_a.11_10.title":
+      "Challenges, Transformation, and New Opportunities",
     "session.track_a.13_00.title": "AWS 상의 조직 및 규정 준수 실전 공유",
     "session.track_a.13_50.title":
       "My journey of Gitops with AWS Codebuild and ArgoCD",
@@ -274,11 +285,10 @@ export const messages = {
     "session.ws_1.13_00.subtitle": "넷플릭스가 알려주지 않는 것들",
     "session.ws_1.13_00.title":
       "How They Stream Live with AWS MediaLive and MediaPackage",
-    "session.ws_1.14_40.title": "AWS Kiro",
+    "session.ws_1.14_40.title": "Building your first application using Kiro",
     "session.ws_2.13_00.subtitle": "RAG 실전 가이드",
     "session.ws_2.13_00.title":
       "Building Legal Intelligence with Amazon Bedrock",
-    "session.ws_2.14_40.title": "(미정 워크숍)",
   },
 } as const;
 

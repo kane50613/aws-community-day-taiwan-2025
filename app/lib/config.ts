@@ -46,15 +46,18 @@ export const sessions: {
   },
   // 10:00 - Keynote I
   {
-    title: "session.keynote_1",
+    subtitle: "session.keynote_1.subtitle",
+    title: "session.keynote_1.title",
     tracks: ["trackA", "trackB"],
+    speakers: ["Chia-liang Kao"],
     startAt: "10:00",
     endAt: "10:30",
   },
   // 10:30 - Keynote II
   {
-    title: "session.keynote_2",
+    title: "session.keynote_2.title",
     tracks: ["trackA", "trackB"],
+    speakers: ["Kim"],
     startAt: "10:30",
     endAt: "11:00",
   },
@@ -67,8 +70,10 @@ export const sessions: {
   },
   // 11:10 - Panel
   {
-    title: "session.panel",
+    title: "session.track_a.11_10.title",
+    subtitle: "session.track_a.11_10.subtitle",
     tracks: ["trackA", "trackB"],
+    speakers: ["Tse Chuan, Hsu", "Shiun Chiu"],
     startAt: "11:10",
     endAt: "12:00",
   },
@@ -161,12 +166,6 @@ export const sessions: {
     startAt: "14:40",
     endAt: "15:20",
     speakers: ["Kiro"],
-  },
-  {
-    title: "session.ws_2.14_40.title",
-    tracks: "ws2",
-    startAt: "14:40",
-    endAt: "15:20",
   },
   // 15:20 - Break
   {

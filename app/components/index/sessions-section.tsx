@@ -8,7 +8,7 @@ export const trackAtom = atom<TrackId | "all">("all");
 
 export function SessionsSection() {
   return (
-    <div className="max-w-screen-lg mx-auto">
+    <div id="agenda" className="max-w-screen-xl mx-auto">
       <h2 className="text-4xl font-semibold px-8 my-8">
         <FormattedMessage id="session_section.title" />
       </h2>
