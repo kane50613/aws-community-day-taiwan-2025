@@ -10,9 +10,9 @@ const linkIcons = {
 export function SessionSpeaker({ speaker }: { speaker: Speaker }) {
   return (
     <div className="sm:text-end flex flex-col sm:align-bottom">
-      <p className="font-medium text-2xl">{speaker.name}</p>
+      <p className="text-2xl">{speaker.name}</p>
       {speaker.title && (
-        <span className="text-foreground/75 text-lg">{speaker.title}</span>
+        <span className="text-foreground/75 text-base">{speaker.title}</span>
       )}
       {speaker.link && (
         <div className="flex gap-2 sm:justify-end pt-2">
