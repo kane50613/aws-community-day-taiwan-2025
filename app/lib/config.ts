@@ -313,7 +313,7 @@ export const sessions: {
         link: [
           {
             type: "linkedin",
-            url: "https://www.linkedin.com/in/kiro/",
+            url: "https://www.linkedin.com/in/shazi7804/",
           },
         ],
       },
