@@ -115,7 +115,7 @@ export const sessions: {
         link: [
           {
             type: "linkedin",
-            url: "https://www.linkedin.com/in/tsechuanhsu/",
+            url: "https://www.linkedin.com/in/tse-chuan-hsu-62226966/",
           },
         ],
       },
