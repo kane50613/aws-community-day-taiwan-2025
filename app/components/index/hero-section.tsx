@@ -45,9 +45,13 @@ export function HeroSection() {
           <p>
             <FormattedMessage id="hero_section.date" />
           </p>
-          <p>
+          <a
+            href="https://maps.app.goo.gl/8PRcb5mpDkgEKJhSA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FormattedMessage id="hero_section.location" />
-          </p>
+          </a>
         </div>
         <div className="flex sm:flex-row flex-col-reverse flex-wrap w-full sm:w-fit gap-6">
           <Button
