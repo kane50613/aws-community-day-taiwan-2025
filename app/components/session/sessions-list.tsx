@@ -1,5 +1,5 @@
 import { useAtomValue } from "jotai";
-import { Fragment, useMemo } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { trackAtom } from "~/components/index/sessions-section";
 import { type Session, sessions } from "~/lib/config";
 import { Separator } from "../ui/separator";
@@ -71,6 +71,35 @@ function SessionTimeList({
   sessions: Session[];
   showSeparator: boolean;
 }) {
+  const [isCurrentSession, setIsCurrentSession] = useState(false);
+
+  useEffect(() => {
+    const checkIfCurrentSession = () => {
+      const now = new Date();
+      const currentTime = now.getHours() * 60 + now.getMinutes(); // minutes since midnight
+
+      // Find if any session at this start time is currently happening
+      const currentSession = sessions.find((session) => {
+        if (session.title === "session.break") return false; // Skip breaks
+
+        const [startHour, startMinute] = session.startAt.split(":").map(Number);
+        const [endHour, endMinute] = session.endAt.split(":").map(Number);
+
+        const startTimeMinutes = startHour * 60 + startMinute;
+        const endTimeMinutes = endHour * 60 + endMinute;
+
+        return currentTime >= startTimeMinutes && currentTime < endTimeMinutes;
+      });
+
+      setIsCurrentSession(!!currentSession);
+    };
+
+    checkIfCurrentSession();
+    // Check every minute
+    const interval = setInterval(checkIfCurrentSession, 60000);
+    return () => clearInterval(interval);
+  }, [sessions]);
+
   const firstSession = sessions[0];
   const isBreakTime = firstSession?.title === "session.break";
 
@@ -85,7 +114,15 @@ function SessionTimeList({
 
   return (
     <div className="space-y-8 py-4 px-8">
-      <p className="text-[1.5em] text-foreground/75">{startTime}</p>
+      <div className="relative w-fit">
+        <p className="text-[1.5em] text-foreground/75">{startTime}</p>
+        {isCurrentSession && (
+          <div className="absolute top-0 -right-2">
+            <div className="w-3 h-3 bg-red-500 rounded-full" />
+            <div className="absolute inset-0 w-3 h-3 bg-red-500 rounded-full animate-ping" />
+          </div>
+        )}
+      </div>
       <div className="flex flex-col gap-y-8">
         {sessions.map((session, index) => (
           <Fragment key={session.title}>
