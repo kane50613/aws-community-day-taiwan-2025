@@ -1,5 +1,9 @@
 import type { MessageId } from "./i18n";
 
+export const surveyUrl = "http://go.awscmd.tw/25survey";
+
+export const showSurvey = true;
+
 export type TrackId = (typeof tracks)[number]["id"];
 
 export const tracks = [
@@ -318,7 +322,7 @@ export const sessions: {
           {
             type: "website",
             url: "https://www.facebook.com/shazi.liao",
-          }
+          },
         ],
       },
     ],

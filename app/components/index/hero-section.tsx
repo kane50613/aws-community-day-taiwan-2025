@@ -1,5 +1,5 @@
 import { useAtom, useSetAtom } from "jotai";
-import { Cloud, UserRound } from "lucide-react";
+import { Cloud, Scroll, UserRound } from "lucide-react";
 import { AnimatePresence, type Variants } from "motion/react";
 import * as m from "motion/react-m";
 import type { ReactNode } from "react";
@@ -11,6 +11,7 @@ import { useEnrollment } from "~/lib/api/get-enrollment";
 import { openedModalAtom, tokenAtom } from "~/lib/store";
 import { RegisterDialog } from "../dialog/register-dialog";
 import { Button } from "../ui/button";
+import { showSurvey, surveyUrl } from "~/lib/config";
 
 const actions = ["Connect", "Build with", "Learn with"];
 
@@ -95,6 +96,17 @@ function RegisterButton() {
     // Clear the search params after reading them
     if (searchParams.size > 0) setSearchParams();
   }, [searchParams, setSearchParams, setModal, setToken]);
+
+  if (showSurvey) {
+    return (
+      <Button asChild className="text-xl h-18 sm:w-52 rounded-full w-full">
+        <a href={surveyUrl} target="_blank" rel="noopener noreferrer">
+          <FormattedMessage id="hero_section.survey" />
+          <Scroll className="size-6" />
+        </a>
+      </Button>
+    );
+  }
 
   return (
     <>

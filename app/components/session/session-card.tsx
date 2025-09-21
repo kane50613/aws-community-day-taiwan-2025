@@ -39,11 +39,11 @@ export function SessionCard({ session }: { session: Session }) {
           ))}
         </div>
       )}
-      <div className="flex flex-col gap-2 sm:items-center">
-        <p className="text-foreground/75 text-[0.75em] sm:text-[0.875em] flex items-center sm:justify-end sm:text-end text-balance">
+      <div className="flex flex-col gap-2 sm:justify-end sm:text-end text-balance text-foreground/75 text-[0.75em] sm:text-[0.875em]">
+        <p>
           {session.startAt} - {session.endAt}
         </p>
-        <p className="text-foreground/75 text-[0.75em] sm:text-[0.875em] flex items-center sm:justify-end sm:text-end text-balance">
+        <p>
           {trackMessageIds.map((trackMessageId, index) => {
             const trackId = trackIds[index];
             const track = tracks.find((t) => t.id === trackId);
@@ -51,8 +51,7 @@ export function SessionCard({ session }: { session: Session }) {
               <Fragment key={trackMessageId}>
                 <FormattedMessage id={trackMessageId} />
                 {track?.room && (
-                  <span className="text-sm text-gray-500 px-2">
-                    {" "}
+                  <span className="text-sm text-gray-500 pl-2">
                     {track.room}
                   </span>
                 )}
