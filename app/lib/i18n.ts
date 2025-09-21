@@ -61,9 +61,8 @@ export const messages = {
     "session.track_b.14_40.title": "用 Amazon Q 快速打造 AI 小幫手",
     "session.track_b.15_30.title":
       "用 AWS Serverless 架構為個人交易者建立交易帳本",
-    "session.ws_1.13_00.subtitle": "Netflix 不會告訴你的事",
-    "session.ws_1.13_00.title":
-      "他們如何用 AWS MediaLive 與 MediaPackage 進行直播",
+    "session.ws_1.13_00.subtitle": "現在開始玩 IaC",
+    "session.ws_1.13_00.title": "用 AWS CDK 打造雲端環境",
     "session.ws_1.14_40.title": "用 Kiro 打造你的第一個應用",
     "session.ws_2.13_00.subtitle": "RAG 實作指南",
     "session.ws_2.13_00.title": "用 Amazon Bedrock 建構法務 AI 應用",
@@ -136,9 +135,8 @@ export const messages = {
       "Build an AI Assistant Quickly with Amazon Q",
     "session.track_b.15_30.title":
       "Create trading book for individual trader with AWS serverless architecture",
-    "session.ws_1.13_00.subtitle": "What Netflix Doesn't Tell You",
-    "session.ws_1.13_00.title":
-      "How They Stream Live with AWS MediaLive and MediaPackage",
+    "session.ws_1.13_00.subtitle": "Getting Started with IaC",
+    "session.ws_1.13_00.title": "Building on AWS CDK",
     "session.ws_1.14_40.title": "Building your first application using Kiro",
     "session.ws_2.13_00.subtitle": "A Hands-On Guide to RAG Applications",
     "session.ws_2.13_00.title":
@@ -212,9 +210,8 @@ export const messages = {
     "session.track_b.14_40.title": "Amazon Qで素早くAIアシスタントを作る",
     "session.track_b.15_30.title":
       "Create trading book for individual trader with AWS serverless architecture",
-    "session.ws_1.13_00.subtitle": "What Netflix Doesn't Tell You",
-    "session.ws_1.13_00.title":
-      "How They Stream Live with AWS MediaLive and MediaPackage",
+    "session.ws_1.13_00.subtitle": "Getting Started with IaC",
+    "session.ws_1.13_00.title": "Building on AWS CDK",
     "session.ws_1.14_40.title": "Building your first application using Kiro",
     "session.ws_2.13_00.subtitle": "A Hands-On Guide to RAG Applications",
     "session.ws_2.13_00.title":
@@ -286,9 +283,8 @@ export const messages = {
     "session.track_b.14_40.title": "Amazon Q로 빠르게 AI 도우미 만들기",
     "session.track_b.15_30.title":
       "Create trading book for individual trader with AWS serverless architecture",
-    "session.ws_1.13_00.subtitle": "넷플릭스가 알려주지 않는 것들",
-    "session.ws_1.13_00.title":
-      "How They Stream Live with AWS MediaLive and MediaPackage",
+    "session.ws_1.13_00.subtitle": "Getting Started with IaC",
+    "session.ws_1.13_00.title": "Building on AWS CDK",
     "session.ws_1.14_40.title": "Building your first application using Kiro",
     "session.ws_2.13_00.subtitle": "RAG 실전 가이드",
     "session.ws_2.13_00.title":

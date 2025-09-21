@@ -11,7 +11,7 @@ export const tracks = [
   {
     id: "trackB",
     name: "session.track_b.title",
-    room: "202DE",
+    room: "201DE",
   },
   {
     id: "ws1",

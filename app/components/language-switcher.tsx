@@ -1,4 +1,4 @@
-import { Globe } from "lucide-react";
+import { Languages } from "lucide-react";
 import { Link } from "react-router";
 import type { Locale } from "~/lib/i18n";
 import { useLocale } from "~/root";
@@ -24,7 +24,7 @@ export function LanguageSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" aria-label="Language Switcher">
-          <Globe />
+          <Languages />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
