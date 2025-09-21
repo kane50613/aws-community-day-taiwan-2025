@@ -57,8 +57,8 @@ export const messages = {
     "session.track_b.13_50.subtitle": "在 AWS 上擴展 RAG 系統",
     "session.track_b.13_50.title":
       "使用 Bedrock、Lambda 與向量搜尋建置 AI 應用",
-    "session.track_b.14_40.subtitle": "連 HR 也能上手",
-    "session.track_b.14_40.title": "使用 Amazon Q 快速打造 AI 小幫手",
+    "session.track_b.14_40.subtitle": "連 HR 都能輕鬆上手！",
+    "session.track_b.14_40.title": "用 Amazon Q 快速打造 AI 小幫手",
     "session.track_b.15_30.title":
       "用 AWS Serverless 架構為個人交易者建立交易帳本",
     "session.ws_1.13_00.subtitle": "Netflix 不會告訴你的事",
@@ -131,7 +131,7 @@ export const messages = {
     "session.track_b.13_50.subtitle": "Scaling RAG Systems on AWS",
     "session.track_b.13_50.title":
       "Building AI Apps with Bedrock, Lambda & Vector Search",
-    "session.track_b.14_40.subtitle": "Make HR Friendly",
+    "session.track_b.14_40.subtitle": "Even HR Can Do It Easily!",
     "session.track_b.14_40.title":
       "Build an AI Assistant Quickly with Amazon Q",
     "session.track_b.15_30.title":

@@ -315,6 +315,10 @@ export const sessions: {
             type: "linkedin",
             url: "https://www.linkedin.com/in/shazi7804/",
           },
+          {
+            type: "website",
+            url: "https://www.facebook.com/shazi.liao",
+          }
         ],
       },
     ],
