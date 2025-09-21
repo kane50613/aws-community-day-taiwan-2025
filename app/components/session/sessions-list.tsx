@@ -95,8 +95,9 @@ function SessionTimeList({
     };
 
     checkIfCurrentSession();
-    // Check every minute
-    const interval = setInterval(checkIfCurrentSession, 60000);
+
+    const interval = setInterval(checkIfCurrentSession, 5000);
+
     return () => clearInterval(interval);
   }, [sessions]);
 
