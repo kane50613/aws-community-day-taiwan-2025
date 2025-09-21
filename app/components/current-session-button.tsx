@@ -85,8 +85,9 @@ export function CurrentSessionButton() {
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
       <Button
         onClick={scrollToCurrentSession}
-        className="shadow-lg hover:shadow-xl transition-shadow animate-bounce"
+        className="shadow-xl hover:shadow-xl transition-all animate-bounce rounded-full scale-120"
         size="lg"
+        variant="outline"
       >
         <FormattedMessage
           id="current_session.button"
