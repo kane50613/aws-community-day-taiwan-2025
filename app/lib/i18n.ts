@@ -31,7 +31,7 @@ export const messages = {
       "請在活動當天出示此 QR Code 進行報到，您隨時可以回到這個頁面取得 QR Code",
     "qrcode_dialog_content.add_to_google_calendar": "加入 Google 日曆",
     "qrcode_dialog_content.download_ics": "下載 ICS 檔案",
-    "current_session.button": "前往目前場次",
+    "current_session.button": "前往進行中議程",
     "session_section.title": "議程",
     "session.session_tab.all": "全部",
     "session.check_in": "報到",
