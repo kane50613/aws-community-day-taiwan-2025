@@ -13,7 +13,10 @@ export function SessionCard({ session }: { session: Session }) {
   );
 
   return (
-    <div className="flex flex-col gap-4 sm:grid grid-cols-4 w-full min-h-[3em] text-2xl relative">
+    <div
+      id={`session-${session.startAt}-${session.title}`}
+      className="flex flex-col gap-4 sm:grid grid-cols-4 w-full min-h-[3em] text-2xl relative"
+    >
       <div
         className={cn(
           "flex flex-col items-start justify-center gap-2",
