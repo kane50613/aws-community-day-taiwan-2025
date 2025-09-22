@@ -39,7 +39,7 @@ export function SessionCard({ session }: { session: Session }) {
           ))}
         </div>
       )}
-      <div className="flex flex-col gap-2 sm:justify-end sm:text-end text-balance text-foreground/75 text-[0.75em] sm:text-[0.875em]">
+      <div className="flex flex-col gap-2 sm:justify-center sm:text-end text-balance text-foreground/75 text-[0.75em] sm:text-[0.875em]">
         <p>
           {session.startAt} - {session.endAt}
         </p>
