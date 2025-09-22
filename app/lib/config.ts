@@ -113,6 +113,16 @@ export const sessions: {
     tracks: ["trackA", "trackB"],
     speakers: [
       {
+        name: "林奇葳",
+        title: "1111 人力銀行高階獵才中心 總經理",
+        link: [
+          {
+            type: "linkedin",
+            url: "https://www.linkedin.com/in/kiwi-lin-306709b9/"
+          }
+        ]
+      },
+      {
         name: "Tse Chuan, Hsu",
         title:
           "Associate Professor. Soochow University Department of Computer Science and Information Management",
